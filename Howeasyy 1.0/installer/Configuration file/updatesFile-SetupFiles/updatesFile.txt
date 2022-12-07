@@ -1,0 +1,14 @@
+;aiu;
+
+[Update]
+Name = Howeasyy 1.0
+ProductVersion = 2.0.2.0
+URL = https://www.dropbox.com/s/jbxmbj48h34h3wn/Howeasyy%201.0.exe?dl=1
+Size = 26652824
+ReleaseDate = 07/08/2022
+SHA256 = 77165DB220B0A15F113570017626C48843264FCE579842FCC13F75B3F1BDFB5B
+MD5 = 0bfdd6ca8f430273fb316d7e43d42b2f
+ServerFileName = Howeasyy 1.0.exe
+RegistryKey = HKUD\Software\Howeasyy\Howeasyy 1.0\Version
+Version = 2.0.2.0
+Description = Version 2.0.2.0 is available 

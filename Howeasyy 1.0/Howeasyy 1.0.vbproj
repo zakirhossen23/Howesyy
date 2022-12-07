@@ -1,0 +1,866 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\CefSharp.Common.97.1.61\build\CefSharp.Common.props" Condition="Exists('packages\CefSharp.Common.97.1.61\build\CefSharp.Common.props')" />
+  <Import Project="packages\cef.redist.x86.97.1.6\build\cef.redist.x86.props" Condition="Exists('packages\cef.redist.x86.97.1.6\build\cef.redist.x86.props')" />
+  <Import Project="packages\cef.redist.x64.97.1.6\build\cef.redist.x64.props" Condition="Exists('packages\cef.redist.x64.97.1.6\build\cef.redist.x64.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4E6CEFF7-A766-4048-B3E3-E7BDC2780DA7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Howeasyy.My.MyApplication</StartupObject>
+    <RootNamespace>Howeasyy</RootNamespace>
+    <AssemblyName>Howeasyy 1.0</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\Howesyy\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <SupportUrl>https://howeasyy.com</SupportUrl>
+    <ErrorReportUrl>https://howeasyy.com</ErrorReportUrl>
+    <ProductName>Howeasyy</ProductName>
+    <PublisherName>Howeasyy</PublisherName>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.2</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Howeasyy 1.0.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Howeasyy 1.0.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>untitled__1__P6o_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>38F6DA35FC688A923D69D335FA26F75F077513D2</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Howeasyy 1.0_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CefSharp, Version=97.1.61.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>packages\CefSharp.Common.97.1.61\lib\net452\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core, Version=97.1.61.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>packages\CefSharp.Common.97.1.61\lib\net452\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.WinForms, Version=97.1.61.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>packages\CefSharp.WinForms.97.1.61\lib\net462\CefSharp.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Wpf, Version=97.1.61.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>packages\CefSharp.Wpf.97.1.61\lib\net462\CefSharp.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ChilkatDotNet46, Version=9.5.0.84, Culture=neutral, PublicKeyToken=eb5fc1fc52ef09bd, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ChilkatDotNet46.dll</HintPath>
+    </Reference>
+    <Reference Include="CSScreenRecorder, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CSScreenRecorder.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.9.0.4, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Nice Software\Nice Software\bin\Debug\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="FoxLearn.License">
+      <HintPath>dll\FoxLearn.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>E:\DRIVER SOFTWARE\Guna.UI2_WinForms_v2.0.1.1\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>bin\Debug\MySql.Data.DLL</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Renci.SshNet, Version=2020.0.1.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>packages\SSH.NET.2020.0.1\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet.Async, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Renci.SshNet.Async.1.4.0\lib\net40\Renci.SshNet.Async.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SKGL, Version=2.0.4.1, Culture=neutral, PublicKeyToken=6506df92444891d9, processorArchitecture=MSIL">
+      <HintPath>packages\SoftwareProtector.1.0.5.1\lib\SKGL.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin page\Details\Trial Details\DetailTrail.Designer.vb">
+      <DependentUpon>DetailTrail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin page\Details\Trial Details\DetailTrail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin page\Details\Trial Details\detailtrailInterface.Designer.vb">
+      <DependentUpon>detailtrailInterface.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin page\Details\Trial Details\detailtrailInterface.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin page\Details\Buy Details\DetailBuy.Designer.vb">
+      <DependentUpon>DetailBuy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin page\Details\Buy Details\DetailBuy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin page\Details\DetailsUser.Designer.vb">
+      <DependentUpon>DetailsUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin page\Details\DetailsUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin page\Details\Buy Details\detailbuyInterface.Designer.vb">
+      <DependentUpon>detailbuyInterface.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin page\Details\Buy Details\detailbuyInterface.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin page\LicenseKey.Designer.vb">
+      <DependentUpon>LicenseKey.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin page\LicenseKey.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin page\userslist.Designer.vb">
+      <DependentUpon>userslist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin page\userslist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Chromium\AdminHome.Designer.vb">
+      <DependentUpon>AdminHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Chromium\AdminHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin page\AdminMainPage.Designer.vb">
+      <DependentUpon>AdminMainPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin page\AdminMainPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\All Apps\FLow Main\FlowMain.Designer.vb">
+      <DependentUpon>FlowMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\All Apps\FLow Main\FlowMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\All Apps\Flow Panel\DesktoFlow.Designer.vb">
+      <DependentUpon>DesktoFlow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\All Apps\Flow Panel\DesktoFlow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\All Apps\Flow Panel\MobileFlow.Designer.vb">
+      <DependentUpon>MobileFlow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\All Apps\Flow Panel\MobileFlow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\All Apps\Flow Panel\WebFlow.Designer.vb">
+      <DependentUpon>WebFlow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\All Apps\Flow Panel\WebFlow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\All Apps\Interfaces\FlowMobileFreeinterface.Designer.vb">
+      <DependentUpon>FlowMobileFreeinterface.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\All Apps\Interfaces\FlowMobileFreeinterface.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\All Apps\Interfaces\FlowWebFreeinterface.Designer.vb">
+      <DependentUpon>FlowWebFreeinterface.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\All Apps\Interfaces\FlowWebFreeinterface.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Chromium\browserhome.Designer.vb">
+      <DependentUpon>browserhome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Chromium\browserhome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chromium\Home.Designer.vb">
+      <DependentUpon>Home.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Chromium\Home.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chromium\Popup for browser\addshortcut.Designer.vb">
+      <DependentUpon>addshortcut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Chromium\Popup for browser\addshortcut.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Howeasyy AI\_class\CommandsCode.vb" />
+    <Compile Include="_Class\Class1.vb" />
+    <Compile Include="_Class\Popup.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Class\Code_Encryption.vb" />
+    <Compile Include="Developer Area\codeinsert.Designer.vb">
+      <DependentUpon>codeinsert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Developer Area\codeinsert.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Developer Area\DevArea.Designer.vb">
+      <DependentUpon>DevArea.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Developer Area\DevArea.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Developer Area\update\DevAreaUpdate.Designer.vb">
+      <DependentUpon>DevAreaUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Developer Area\update\DevAreaUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Howeasyy AI\HoweasyyAi.Designer.vb">
+      <DependentUpon>HoweasyyAi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Howeasyy AI\HoweasyyAi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Cryptography.vb" />
+    <Compile Include="_Class\Module4.vb" />
+    <Compile Include="Edit Profile\Editprofile.Designer.vb">
+      <DependentUpon>Editprofile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Profile\Editprofile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loading\Loading.Designer.vb">
+      <DependentUpon>Loading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Loading\Loading.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\Adminmain.Designer.vb">
+      <DependentUpon>Adminmain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\Adminmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Mobile flow\MobileDataInput.Designer.vb">
+      <DependentUpon>MobileDataInput.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Mobile flow\MobileDataInput.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow data input\DesktopDataInput.Designer.vb">
+      <DependentUpon>DesktopDataInput.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow data input\DesktopDataInput.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Desktop flow\AdminDesktoFlow.Designer.vb">
+      <DependentUpon>AdminDesktoFlow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Desktop flow\AdminDesktoFlow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Desktop flow\Edit interface\DesktopEdit.Designer.vb">
+      <DependentUpon>DesktopEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Desktop flow\Edit interface\DesktopEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Mobile flow\AdminMobileFlow.Designer.vb">
+      <DependentUpon>AdminMobileFlow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Mobile flow\AdminMobileFlow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Mobile flow\Edit mobile interface\MobileEdit.Designer.vb">
+      <DependentUpon>MobileEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Mobile flow\Edit mobile interface\MobileEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Web flow\AdminWebFlow.Designer.vb">
+      <DependentUpon>AdminWebFlow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Web flow\AdminWebFlow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Web flow\Edit interface\WebEdit.Designer.vb">
+      <DependentUpon>WebEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Web flow\Edit interface\WebEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Web flow\WebDataInput.Designer.vb">
+      <DependentUpon>WebDataInput.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\All Apps Admin\Flow Panel Admin\Admin Web flow\WebDataInput.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\Downloadpage.Designer.vb">
+      <DependentUpon>Downloadpage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\Downloadpage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App store\Freeinterface.Designer.vb">
+      <DependentUpon>Freeinterface.vb</DependentUpon>
+    </Compile>
+    <Compile Include="App store\Freeinterface.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Forget pass\Forgotpass.Designer.vb">
+      <DependentUpon>Forgotpass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Forget pass\Forgotpass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Forget pass\forgotpassconnect.Designer.vb">
+      <DependentUpon>forgotpassconnect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Forget pass\forgotpassconnect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Forget pass\resetpass.Designer.vb">
+      <DependentUpon>resetpass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Forget pass\resetpass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\signup.Designer.vb">
+      <DependentUpon>signup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\signup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mainpage.Designer.vb">
+      <DependentUpon>Mainpage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mainpage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="_Class\Module1.vb" />
+    <Compile Include="_Class\Module2.vb" />
+    <Compile Include="_Class\Module3.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Recorder\recordersettings.Designer.vb">
+      <DependentUpon>recordersettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recorder\recordersettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Class\Settings.vb" />
+    <Compile Include="sonarbanglaDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sonarbanglaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sonarbanglaDataSet.vb">
+      <DependentUpon>sonarbanglaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Webbrowser\Normal Browser\Homenormalwebbrowser.Designer.vb">
+      <DependentUpon>Homenormalwebbrowser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Webbrowser\Normal Browser\Homenormalwebbrowser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Webbrowser\Normal Browser\TabNoramBrowser.Designer.vb">
+      <DependentUpon>TabNoramBrowser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Webbrowser\Normal Browser\TabNoramBrowser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Class\Status.vb" />
+    <Compile Include="_Digital_components\Guna2LoadingButton.Designer.vb">
+      <DependentUpon>Guna2LoadingButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="_Digital_components\Guna2LoadingButton.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Digital_components\DigitalButton.Designer.vb">
+      <DependentUpon>DigitalButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="_Digital_components\DigitalButton.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Digital_components\LoginPicture.Designer.vb">
+      <DependentUpon>LoginPicture.vb</DependentUpon>
+    </Compile>
+    <Compile Include="_Digital_components\LoginPicture.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Digital_components\shortcut.Designer.vb">
+      <DependentUpon>shortcut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="_Digital_components\shortcut.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Digital_components\ShortcutPopup.Designer.vb">
+      <DependentUpon>ShortcutPopup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="_Digital_components\ShortcutPopup.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Admin page\Details\Trial Details\DetailTrail.resx">
+      <DependentUpon>DetailTrail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin page\Details\Trial Details\detailtrailInterface.resx">
+      <DependentUpon>detailtrailInterface.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin page\Details\DetailsUser.resx">
+      <DependentUpon>DetailsUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin page\Details\Buy Details\DetailBuy.resx">
+      <DependentUpon>DetailBuy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin page\Details\Buy Details\detailbuyInterface.resx">
+      <DependentUpon>detailbuyInterface.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin page\LicenseKey.dje.resx">
+      <DependentUpon>LicenseKey.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin page\LicenseKey.resx">
+      <DependentUpon>LicenseKey.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin page\userslist.resx">
+      <DependentUpon>userslist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Chromium\AdminHome.resx">
+      <DependentUpon>AdminHome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin page\AdminMainPage.resx">
+      <DependentUpon>AdminMainPage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\All Apps\FLow Main\FlowMain.resx">
+      <DependentUpon>FlowMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\All Apps\Flow Panel\DesktoFlow.resx">
+      <DependentUpon>DesktoFlow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\All Apps\Flow Panel\MobileFlow.resx">
+      <DependentUpon>MobileFlow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\All Apps\Flow Panel\WebFlow.resx">
+      <DependentUpon>WebFlow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\All Apps\Interfaces\FlowMobileFreeinterface.resx">
+      <DependentUpon>FlowMobileFreeinterface.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\All Apps\Interfaces\FlowWebFreeinterface.resx">
+      <DependentUpon>FlowWebFreeinterface.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chromium\browserhome.resx">
+      <DependentUpon>browserhome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chromium\Home.resx">
+      <DependentUpon>Home.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chromium\Popup for browser\addshortcut.resx">
+      <DependentUpon>addshortcut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Developer Area\codeinsert.resx">
+      <DependentUpon>codeinsert.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Developer Area\DevArea.resx">
+      <DependentUpon>DevArea.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Developer Area\update\DevAreaUpdate.resx">
+      <DependentUpon>DevAreaUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Profile\Editprofile.resx">
+      <DependentUpon>Editprofile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Howeasyy AI\HoweasyyAi.resx">
+      <DependentUpon>HoweasyyAi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loading\Loading.resx">
+      <DependentUpon>Loading.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\Adminmain.resx">
+      <DependentUpon>Adminmain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\All Apps Admin\Flow Panel Admin\Admin Mobile flow\MobileDataInput.resx">
+      <DependentUpon>MobileDataInput.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\All Apps Admin\Flow data input\DesktopDataInput.resx">
+      <DependentUpon>DesktopDataInput.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\All Apps Admin\Flow Panel Admin\Admin Desktop flow\AdminDesktoFlow.resx">
+      <DependentUpon>AdminDesktoFlow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\All Apps Admin\Flow Panel Admin\Admin Desktop flow\Edit interface\DesktopEdit.resx">
+      <DependentUpon>DesktopEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\All Apps Admin\Flow Panel Admin\Admin Mobile flow\AdminMobileFlow.resx">
+      <DependentUpon>AdminMobileFlow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\All Apps Admin\Flow Panel Admin\Admin Mobile flow\Edit mobile interface\MobileEdit.resx">
+      <DependentUpon>MobileEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\All Apps Admin\Flow Panel Admin\Admin Web flow\AdminWebFlow.resx">
+      <DependentUpon>AdminWebFlow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\All Apps Admin\Flow Panel Admin\Admin Web flow\Edit interface\WebEdit.resx">
+      <DependentUpon>WebEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\All Apps Admin\Flow Panel Admin\Admin Web flow\WebDataInput.resx">
+      <DependentUpon>WebDataInput.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\Downloadpage.resx">
+      <DependentUpon>Downloadpage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App store\Freeinterface.resx">
+      <DependentUpon>Freeinterface.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Forget pass\Forgotpass.resx">
+      <DependentUpon>Forgotpass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Forget pass\forgotpassconnect.resx">
+      <DependentUpon>forgotpassconnect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Forget pass\resetpass.resx">
+      <DependentUpon>resetpass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\signup.resx">
+      <DependentUpon>signup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mainpage.resx">
+      <DependentUpon>Mainpage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recorder\recordersettings.resx">
+      <DependentUpon>recordersettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Webbrowser\Normal Browser\Homenormalwebbrowser.resx">
+      <DependentUpon>Homenormalwebbrowser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Webbrowser\Normal Browser\TabNoramBrowser.resx">
+      <DependentUpon>TabNoramBrowser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Digital_components\Guna2LoadingButton.resx">
+      <DependentUpon>Guna2LoadingButton.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Digital_components\DigitalButton.resx">
+      <DependentUpon>DigitalButton.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Digital_components\LoginPicture.resx">
+      <DependentUpon>LoginPicture.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Digital_components\shortcut.resx">
+      <DependentUpon>shortcut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Digital_components\ShortcutPopup.resx">
+      <DependentUpon>ShortcutPopup.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+    <None Include="App.config" />
+    <None Include="Howeasyy 1.0_TemporaryKey.pfx" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="sonarbanglaDataSet.xsc">
+      <DependentUpon>sonarbanglaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sonarbanglaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sonarbanglaDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sonarbanglaDataSet.xss">
+      <DependentUpon>sonarbanglaDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="image_2020_10_13T04_58_23_994Z-removebg-preview.ico" />
+    <Content Include="LINCENSE.txt" />
+    <None Include="Resources\Untitled-%281%29 %281%29.png" />
+    <None Include="Resources\untitled__1__P6o_icon.ico" />
+    <None Include="Resources\Untitled-%281%29 %281%291.png" />
+    <None Include="Resources\backicon.png" />
+    <None Include="Resources\reloadicon.png" />
+    <Content Include="Software Protector.exe" />
+    <Content Include="Untitled-_1_.ico" />
+    <Content Include="untitled__1__P6o_icon.ico" />
+    <None Include="Resources\pos system homepage.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\DASHBOARD NEW.png" />
+    <None Include="Resources\home1.png" />
+    <None Include="Resources\home new mode.png" />
+    <None Include="Resources\dashboard new version.png" />
+    <None Include="Resources\pos system new version.png" />
+    <None Include="Resources\ui and ux new version.png" />
+    <None Include="Resources\marketplace new version.png" />
+    <None Include="Resources\ui and ux new version1.png" />
+    <None Include="Resources\administrator new version.png" />
+    <None Include="Resources\Logout new version.png" />
+    <None Include="Resources\clipart3077324.png" />
+    <None Include="Resources\cross.png" />
+    <None Include="Resources\minimize-icon-29.png" />
+    <None Include="Resources\man icon.png" />
+    <None Include="Resources\man icon1.png" />
+    <None Include="Resources\desktop.PNG" />
+    <None Include="Resources\Web.PNG" />
+    <None Include="Resources\Mobile.PNG" />
+    <None Include="Resources\img_146579.png" />
+    <None Include="Resources\img_1465791.png" />
+    <None Include="Resources\application+browser+internet+page+web+window+icon-1320183950871642781.png" />
+    <None Include="Resources\65680.png" />
+    <None Include="Resources\Dell_Inspiron_One_23_Touch_AIO_Desktop_PC.png" />
+    <None Include="Resources\iphone_PNG5736.png" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\download1.png" />
+    <None Include="Resources\394-3949390_computer-icons-clip-art-star-png-icon-transparent.jpg" />
+    <None Include="Resources\check-mark-icon-isolated-on-white-background-vector-26464923.jpg" />
+    <None Include="Resources\Save_Icon-512.png" />
+    <None Include="Resources\united-states-dollar-money-united-states-one-dollar-bill-banknote-dollar-cash-money.jpg" />
+    <None Include="Resources\Untitled.png" />
+    <None Include="Resources\unnamed.png" />
+    <None Include="Resources\1408359111-5cfd2ea93b130_articlex.jpg" />
+    <None Include="Resources\unnamed1.png" />
+    <None Include="Resources\toppng.com-android-lollipop-app-icons-566x1172.png" />
+    <None Include="Resources\banner.png" />
+    <None Include="Resources\toppng.com-lock-icon-lock-icon-lock-circle-icon-small-lock-lock-icon-mac-252x375.png" />
+    <None Include="Resources\stock marekt png.png" />
+    <None Include="Resources\plus-512.png" />
+    <None Include="Resources\icon-close-512.png" />
+    <None Include="Resources\picture.png" />
+    <None Include="Resources\windows-loading-icon-2.gif" />
+    <None Include="Resources\arrow-refresh-4-icon.png" />
+    <None Include="Resources\Fotolia_117855281_Subscription_Monthly_M.jpg" />
+    <None Include="Resources\Fotolia_117855281_Subscription_Monthly_M1.jpg" />
+    <None Include="Resources\image_2020_10_13T04_58_23_994Z-removebg-preview.png" />
+    <None Include="Resources\interneticon.png" />
+    <None Include="Resources\Howeasyyload-new.gif" />
+    <None Include="Resources\update_profile_icon.jpg" />
+    <None Include="Resources\update_icon.png" />
+    <None Include="Resources\New_Logout_Logo.png" />
+    <None Include="Resources\login.jpg" />
+    <None Include="Resources\laoding.gif" />
+    <None Include="Resources\Untitled-%281%29.png" />
+    <Content Include="sonarbangla.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxSHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="sonarbangla.mdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\cef.redist.x64.97.1.6\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cef.redist.x64.97.1.6\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('packages\cef.redist.x86.97.1.6\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cef.redist.x86.97.1.6\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('packages\CefSharp.Common.97.1.61\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\CefSharp.Common.97.1.61\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('packages\CefSharp.Common.97.1.61\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\CefSharp.Common.97.1.61\build\CefSharp.Common.targets'))" />
+  </Target>
+  <Import Project="packages\CefSharp.Common.97.1.61\build\CefSharp.Common.targets" Condition="Exists('packages\CefSharp.Common.97.1.61\build\CefSharp.Common.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
