@@ -90,9 +90,6 @@ Partial Class FlowMain
         '
         '
         '
-        Me.ItemContainer6.TitleMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
         '
         Me.ItemContainer6.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
@@ -108,11 +105,7 @@ Partial Class FlowMain
         Me.ItemContainer7.Name = "ItemContainer7"
         Me.ItemContainer7.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ButtonItem18, Me.ButtonItem19, Me.ButtonItem20, Me.ButtonItem21, Me.ButtonItem22, Me.ButtonItem23})
         '
-        '
-        '
-        Me.ItemContainer7.TitleMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
+
         '
         Me.ItemContainer7.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
@@ -185,10 +178,7 @@ Partial Class FlowMain
         Me.GalleryContainer2.PopupUsesStandardScrollbars = False
         '
         '
-        '
-        Me.GalleryContainer2.TitleMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
+
         '
         Me.GalleryContainer2.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '

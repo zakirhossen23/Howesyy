@@ -23,11 +23,11 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Animation3 As Guna.UI2.AnimatorNS.Animation = New Guna.UI2.AnimatorNS.Animation()
-        Dim Animation4 As Guna.UI2.AnimatorNS.Animation = New Guna.UI2.AnimatorNS.Animation()
-        Dim Animation1 As Guna.UI2.AnimatorNS.Animation = New Guna.UI2.AnimatorNS.Animation()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Dim Animation2 As Guna.UI2.AnimatorNS.Animation = New Guna.UI2.AnimatorNS.Animation()
+        Dim Animation3 As Guna.UI2.AnimatorNS.Animation = New Guna.UI2.AnimatorNS.Animation()
+        Dim Animation1 As Guna.UI2.AnimatorNS.Animation = New Guna.UI2.AnimatorNS.Animation()
+        Dim Animation4 As Guna.UI2.AnimatorNS.Animation = New Guna.UI2.AnimatorNS.Animation()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -47,7 +47,6 @@ Partial Class Form2
         Me.Guna2GradientPanel3 = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Guna2GradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
@@ -67,7 +66,6 @@ Partial Class Form2
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
-        Me.PanelsContainer = New Howeasyy.LoginPicture()
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.InternetCheck = New System.ComponentModel.BackgroundWorker()
         Me.PanelTransition = New Guna.UI2.WinForms.Guna2Transition()
@@ -77,6 +75,8 @@ Partial Class Form2
         Me.slideTransition = New Guna.UI2.WinForms.Guna2Transition()
         Me.SlideTransrev = New Guna.UI2.WinForms.Guna2Transition()
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
+        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.PanelsContainer = New Howeasyy.LoginPicture()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -97,18 +97,18 @@ Partial Class Form2
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.Window
+        Me.Panel1.BackColor = System.Drawing.Color.Black
+        Me.Panel1.Controls.Add(Me.PanelsContainer)
         Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Controls.Add(Me.Guna2CustomGradientPanel1)
-        Me.Panel1.Controls.Add(Me.PanelsContainer)
         Me.SlideTransrev.SetDecoration(Me.Panel1, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.PanelTransition.SetDecoration(Me.Panel1, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.LoadingTransition.SetDecoration(Me.Panel1, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.slideTransition.SetDecoration(Me.Panel1, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Location = New System.Drawing.Point(1, 1)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1073, 549)
+        Me.Panel1.Size = New System.Drawing.Size(1260, 585)
         Me.Panel1.TabIndex = 0
         '
         'Panel4
@@ -121,34 +121,37 @@ Partial Class Form2
         Me.LoadingTransition.SetDecoration(Me.Panel4, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.slideTransition.SetDecoration(Me.Panel4, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel4.Location = New System.Drawing.Point(629, 37)
+        Me.Panel4.Location = New System.Drawing.Point(832, 37)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(444, 512)
+        Me.Panel4.Size = New System.Drawing.Size(428, 548)
         Me.Panel4.TabIndex = 102
         '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.Panel5)
-        Me.Panel3.Controls.Add(Me.Label5)
         Me.SlideTransrev.SetDecoration(Me.Panel3, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.PanelTransition.SetDecoration(Me.Panel3, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.LoadingTransition.SetDecoration(Me.Panel3, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.slideTransition.SetDecoration(Me.Panel3, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.Panel3.Location = New System.Drawing.Point(11, 10)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel3.Location = New System.Drawing.Point(-5, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(422, 500)
+        Me.Panel3.Size = New System.Drawing.Size(431, 546)
         Me.Panel3.TabIndex = 95
         '
         'Panel5
         '
+        Me.Panel5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Panel5.Controls.Add(Me.Guna2Panel2)
+        Me.Panel5.Controls.Add(Me.Guna2HtmlLabel2)
         Me.SlideTransrev.SetDecoration(Me.Panel5, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.PanelTransition.SetDecoration(Me.Panel5, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.LoadingTransition.SetDecoration(Me.Panel5, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.slideTransition.SetDecoration(Me.Panel5, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.Panel5.Location = New System.Drawing.Point(19, 52)
+        Me.Panel5.Location = New System.Drawing.Point(23, 24)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(381, 429)
+        Me.Panel5.Size = New System.Drawing.Size(381, 472)
         Me.Panel5.TabIndex = 95
         '
         'Guna2Panel2
@@ -174,7 +177,7 @@ Partial Class Form2
         Me.LoadingTransition.SetDecoration(Me.Guna2Panel2, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.slideTransition.SetDecoration(Me.Guna2Panel2, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.Guna2Panel2.FillColor = System.Drawing.Color.White
-        Me.Guna2Panel2.Location = New System.Drawing.Point(21, 12)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(21, 55)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
         Me.Guna2Panel2.Size = New System.Drawing.Size(350, 407)
@@ -182,6 +185,7 @@ Partial Class Form2
         '
         'PictureBox2
         '
+        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.slideTransition.SetDecoration(Me.PictureBox2, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.SlideTransrev.SetDecoration(Me.PictureBox2, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.PanelTransition.SetDecoration(Me.PictureBox2, Guna.UI2.AnimatorNS.DecorationType.None)
@@ -196,6 +200,7 @@ Partial Class Form2
         '
         'Label7
         '
+        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.slideTransition.SetDecoration(Me.Label7, Guna.UI2.AnimatorNS.DecorationType.None)
@@ -212,6 +217,7 @@ Partial Class Form2
         '
         'LinkLabel1
         '
+        Me.LinkLabel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
         Me.slideTransition.SetDecoration(Me.LinkLabel1, Guna.UI2.AnimatorNS.DecorationType.None)
@@ -228,6 +234,7 @@ Partial Class Form2
         '
         'Label6
         '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.slideTransition.SetDecoration(Me.Label6, Guna.UI2.AnimatorNS.DecorationType.None)
@@ -243,6 +250,7 @@ Partial Class Form2
         '
         'CheckBox1
         '
+        Me.CheckBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.BackColor = System.Drawing.Color.Transparent
         Me.CheckBox1.Cursor = System.Windows.Forms.Cursors.Hand
@@ -259,6 +267,7 @@ Partial Class Form2
         '
         'Label2
         '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.slideTransition.SetDecoration(Me.Label2, Guna.UI2.AnimatorNS.DecorationType.None)
@@ -274,6 +283,7 @@ Partial Class Form2
         '
         'Guna2GradientPanel2
         '
+        Me.Guna2GradientPanel2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Guna2GradientPanel2.BorderColor = System.Drawing.Color.Black
         Me.Guna2GradientPanel2.Controls.Add(Me.TextBox1)
         Me.Guna2GradientPanel2.CustomBorderColor = System.Drawing.Color.Black
@@ -305,6 +315,7 @@ Partial Class Form2
         '
         'Label3
         '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.slideTransition.SetDecoration(Me.Label3, Guna.UI2.AnimatorNS.DecorationType.None)
@@ -320,6 +331,7 @@ Partial Class Form2
         '
         'Button1
         '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button1.BackColor = System.Drawing.Color.Gold
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.slideTransition.SetDecoration(Me.Button1, Guna.UI2.AnimatorNS.DecorationType.None)
@@ -337,6 +349,7 @@ Partial Class Form2
         '
         'LinkLabel2
         '
+        Me.LinkLabel2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.LinkLabel2.AutoSize = True
         Me.LinkLabel2.BackColor = System.Drawing.Color.Transparent
         Me.slideTransition.SetDecoration(Me.LinkLabel2, Guna.UI2.AnimatorNS.DecorationType.None)
@@ -356,6 +369,7 @@ Partial Class Form2
         '
         'Guna2GradientPanel3
         '
+        Me.Guna2GradientPanel3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Guna2GradientPanel3.BackColor = System.Drawing.Color.White
         Me.Guna2GradientPanel3.BorderColor = System.Drawing.Color.Black
         Me.Guna2GradientPanel3.Controls.Add(Me.IconButton1)
@@ -412,28 +426,10 @@ Partial Class Form2
         Me.TextBox2.TabIndex = 17
         Me.TextBox2.UseSystemPasswordChar = True
         '
-        'Label5
-        '
-        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.slideTransition.SetDecoration(Me.Label5, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.Label5, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.LoadingTransition.SetDecoration(Me.Label5, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.SlideTransrev.SetDecoration(Me.Label5, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.Label5.Font = New System.Drawing.Font("Ebrima", 26.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Gold
-        Me.Label5.Location = New System.Drawing.Point(22, 2)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(184, 47)
-        Me.Label5.TabIndex = 93
-        Me.Label5.Text = "Welcome!"
-        '
         'Guna2CustomGradientPanel1
         '
         Me.Guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2CustomGradientPanel1.BorderColor = System.Drawing.Color.Red
-        Me.Guna2CustomGradientPanel1.BorderRadius = 11
+        Me.Guna2CustomGradientPanel1.BorderColor = System.Drawing.Color.White
         Me.Guna2CustomGradientPanel1.BorderThickness = 1
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.Panel2)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.Guna2ControlBox2)
@@ -448,8 +444,9 @@ Partial Class Form2
         Me.Guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
+        Me.Guna2CustomGradientPanel1.Padding = New System.Windows.Forms.Padding(1)
         Me.Guna2CustomGradientPanel1.ShadowDecoration.Parent = Me.Guna2CustomGradientPanel1
-        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(1073, 37)
+        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(1260, 37)
         Me.Guna2CustomGradientPanel1.TabIndex = 96
         '
         'Panel2
@@ -636,14 +633,11 @@ Partial Class Form2
         '
         'Guna2ControlBox2
         '
-        Me.Guna2ControlBox2.Animated = True
         Me.Guna2ControlBox2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ControlBox2.BorderColor = System.Drawing.Color.Red
-        Me.Guna2ControlBox2.BorderRadius = 20
-        Me.Guna2ControlBox2.BorderThickness = 1
+        Me.Guna2ControlBox2.BorderColor = System.Drawing.Color.White
         Me.Guna2ControlBox2.ControlBoxStyle = Guna.UI2.WinForms.Enums.ControlBoxStyle.Custom
         Me.Guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox
-        Me.Guna2ControlBox2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2ControlBox2.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.Guna2ControlBox2.CustomIconSize = 15.0!
         Me.Guna2ControlBox2.CustomizableEdges.BottomRight = False
         Me.Guna2ControlBox2.CustomizableEdges.TopRight = False
@@ -654,15 +648,17 @@ Partial Class Form2
         Me.Guna2ControlBox2.Dock = System.Windows.Forms.DockStyle.Right
         Me.Guna2ControlBox2.FillColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Guna2ControlBox2.HoverState.BorderColor = System.Drawing.Color.White
-        Me.Guna2ControlBox2.HoverState.FillColor = System.Drawing.Color.RoyalBlue
-        Me.Guna2ControlBox2.HoverState.IconColor = System.Drawing.Color.White
+        Me.Guna2ControlBox2.HoverState.FillColor = System.Drawing.Color.White
+        Me.Guna2ControlBox2.HoverState.IconColor = System.Drawing.Color.Black
         Me.Guna2ControlBox2.HoverState.Parent = Me.Guna2ControlBox2
-        Me.Guna2ControlBox2.IconColor = System.Drawing.Color.Purple
-        Me.Guna2ControlBox2.Location = New System.Drawing.Point(976, 0)
+        Me.Guna2ControlBox2.IconColor = System.Drawing.Color.Gray
+        Me.Guna2ControlBox2.Location = New System.Drawing.Point(1162, 1)
         Me.Guna2ControlBox2.Name = "Guna2ControlBox2"
+        Me.Guna2ControlBox2.PressedDepth = 0
         Me.Guna2ControlBox2.ShadowDecoration.Parent = Me.Guna2ControlBox2
-        Me.Guna2ControlBox2.Size = New System.Drawing.Size(53, 37)
+        Me.Guna2ControlBox2.Size = New System.Drawing.Size(53, 35)
         Me.Guna2ControlBox2.TabIndex = 94
+        Me.Guna2ControlBox2.UseTransparentBackground = True
         '
         'Label4
         '
@@ -750,13 +746,10 @@ Partial Class Form2
         '
         'Guna2ControlBox1
         '
-        Me.Guna2ControlBox1.Animated = True
         Me.Guna2ControlBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ControlBox1.BorderColor = System.Drawing.Color.Red
-        Me.Guna2ControlBox1.BorderRadius = 14
-        Me.Guna2ControlBox1.BorderThickness = 1
+        Me.Guna2ControlBox1.BorderColor = System.Drawing.Color.White
         Me.Guna2ControlBox1.ControlBoxStyle = Guna.UI2.WinForms.Enums.ControlBoxStyle.Custom
-        Me.Guna2ControlBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2ControlBox1.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.Guna2ControlBox1.CustomIconSize = 15.0!
         Me.Guna2ControlBox1.CustomizableEdges.BottomLeft = False
         Me.Guna2ControlBox1.CustomizableEdges.BottomRight = False
@@ -767,37 +760,25 @@ Partial Class Form2
         Me.slideTransition.SetDecoration(Me.Guna2ControlBox1, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.Guna2ControlBox1.Dock = System.Windows.Forms.DockStyle.Right
         Me.Guna2ControlBox1.FillColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.Red
-        Me.Guna2ControlBox1.HoverState.IconColor = System.Drawing.Color.White
+        Me.Guna2ControlBox1.HoverState.BorderColor = System.Drawing.Color.White
+        Me.Guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.White
+        Me.Guna2ControlBox1.HoverState.IconColor = System.Drawing.Color.Red
         Me.Guna2ControlBox1.HoverState.Parent = Me.Guna2ControlBox1
-        Me.Guna2ControlBox1.IconColor = System.Drawing.Color.Red
-        Me.Guna2ControlBox1.Location = New System.Drawing.Point(1029, 0)
+        Me.Guna2ControlBox1.IconColor = System.Drawing.Color.Maroon
+        Me.Guna2ControlBox1.Location = New System.Drawing.Point(1215, 1)
+        Me.Guna2ControlBox1.Margin = New System.Windows.Forms.Padding(5)
         Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
+        Me.Guna2ControlBox1.PressedDepth = 0
         Me.Guna2ControlBox1.ShadowDecoration.Parent = Me.Guna2ControlBox1
-        Me.Guna2ControlBox1.Size = New System.Drawing.Size(44, 37)
+        Me.Guna2ControlBox1.Size = New System.Drawing.Size(44, 35)
         Me.Guna2ControlBox1.TabIndex = 89
-        '
-        'PanelsContainer
-        '
-        Me.PanelsContainer.BackgroundImage = CType(resources.GetObject("PanelsContainer.BackgroundImage"), System.Drawing.Image)
-        Me.PanelsContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.slideTransition.SetDecoration(Me.PanelsContainer, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.PanelsContainer, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.LoadingTransition.SetDecoration(Me.PanelsContainer, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.SlideTransrev.SetDecoration(Me.PanelsContainer, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.PanelsContainer.Location = New System.Drawing.Point(0, 37)
-        Me.PanelsContainer.Margin = New System.Windows.Forms.Padding(6)
-        Me.PanelsContainer.Name = "PanelsContainer"
-        Me.PanelsContainer.Size = New System.Drawing.Size(780, 511)
-        Me.PanelsContainer.TabIndex = 104
+        Me.Guna2ControlBox1.UseTransparentBackground = True
         '
         'Guna2BorderlessForm1
         '
         Me.Guna2BorderlessForm1.AnimationType = Guna.UI2.WinForms.Guna2BorderlessForm.AnimateWindowType.AW_HOR_POSITIVE
-        Me.Guna2BorderlessForm1.BorderRadius = 20
         Me.Guna2BorderlessForm1.ContainerControl = Me
-        Me.Guna2BorderlessForm1.HasFormShadow = False
-        Me.Guna2BorderlessForm1.ShadowColor = System.Drawing.Color.Transparent
+        Me.Guna2BorderlessForm1.ResizeForm = False
         '
         'InternetCheck
         '
@@ -806,6 +787,35 @@ Partial Class Form2
         '
         Me.PanelTransition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide
         Me.PanelTransition.Cursor = Nothing
+        Animation2.AnimateOnlyDifferences = True
+        Animation2.BlindCoeff = CType(resources.GetObject("Animation2.BlindCoeff"), System.Drawing.PointF)
+        Animation2.LeafCoeff = 0!
+        Animation2.MaxTime = 1.0!
+        Animation2.MinTime = 0!
+        Animation2.MosaicCoeff = CType(resources.GetObject("Animation2.MosaicCoeff"), System.Drawing.PointF)
+        Animation2.MosaicShift = CType(resources.GetObject("Animation2.MosaicShift"), System.Drawing.PointF)
+        Animation2.MosaicSize = 0
+        Animation2.Padding = New System.Windows.Forms.Padding(0)
+        Animation2.RotateCoeff = 0!
+        Animation2.RotateLimit = 0!
+        Animation2.ScaleCoeff = CType(resources.GetObject("Animation2.ScaleCoeff"), System.Drawing.PointF)
+        Animation2.SlideCoeff = CType(resources.GetObject("Animation2.SlideCoeff"), System.Drawing.PointF)
+        Animation2.TimeCoeff = 0!
+        Animation2.TransparencyCoeff = 0!
+        Me.PanelTransition.DefaultAnimation = Animation2
+        Me.PanelTransition.MaxAnimationTime = 2500
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1000
+        '
+        'BackgroundWorker1
+        '
+        '
+        'LoadingTransition
+        '
+        Me.LoadingTransition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide
+        Me.LoadingTransition.Cursor = Nothing
         Animation3.AnimateOnlyDifferences = True
         Animation3.BlindCoeff = CType(resources.GetObject("Animation3.BlindCoeff"), System.Drawing.PointF)
         Animation3.LeafCoeff = 0!
@@ -821,36 +831,7 @@ Partial Class Form2
         Animation3.SlideCoeff = CType(resources.GetObject("Animation3.SlideCoeff"), System.Drawing.PointF)
         Animation3.TimeCoeff = 0!
         Animation3.TransparencyCoeff = 0!
-        Me.PanelTransition.DefaultAnimation = Animation3
-        Me.PanelTransition.MaxAnimationTime = 2500
-        '
-        'Timer1
-        '
-        Me.Timer1.Interval = 1000
-        '
-        'BackgroundWorker1
-        '
-        '
-        'LoadingTransition
-        '
-        Me.LoadingTransition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide
-        Me.LoadingTransition.Cursor = Nothing
-        Animation4.AnimateOnlyDifferences = True
-        Animation4.BlindCoeff = CType(resources.GetObject("Animation4.BlindCoeff"), System.Drawing.PointF)
-        Animation4.LeafCoeff = 0!
-        Animation4.MaxTime = 1.0!
-        Animation4.MinTime = 0!
-        Animation4.MosaicCoeff = CType(resources.GetObject("Animation4.MosaicCoeff"), System.Drawing.PointF)
-        Animation4.MosaicShift = CType(resources.GetObject("Animation4.MosaicShift"), System.Drawing.PointF)
-        Animation4.MosaicSize = 0
-        Animation4.Padding = New System.Windows.Forms.Padding(0)
-        Animation4.RotateCoeff = 0!
-        Animation4.RotateLimit = 0!
-        Animation4.ScaleCoeff = CType(resources.GetObject("Animation4.ScaleCoeff"), System.Drawing.PointF)
-        Animation4.SlideCoeff = CType(resources.GetObject("Animation4.SlideCoeff"), System.Drawing.PointF)
-        Animation4.TimeCoeff = 0!
-        Animation4.TransparencyCoeff = 0!
-        Me.LoadingTransition.DefaultAnimation = Animation4
+        Me.LoadingTransition.DefaultAnimation = Animation3
         Me.LoadingTransition.MaxAnimationTime = 1000
         '
         'slideTransition
@@ -878,22 +859,22 @@ Partial Class Form2
         '
         Me.SlideTransrev.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide
         Me.SlideTransrev.Cursor = Nothing
-        Animation2.AnimateOnlyDifferences = True
-        Animation2.BlindCoeff = CType(resources.GetObject("Animation2.BlindCoeff"), System.Drawing.PointF)
-        Animation2.LeafCoeff = 0!
-        Animation2.MaxTime = 1.0!
-        Animation2.MinTime = 0!
-        Animation2.MosaicCoeff = CType(resources.GetObject("Animation2.MosaicCoeff"), System.Drawing.PointF)
-        Animation2.MosaicShift = CType(resources.GetObject("Animation2.MosaicShift"), System.Drawing.PointF)
-        Animation2.MosaicSize = 0
-        Animation2.Padding = New System.Windows.Forms.Padding(0)
-        Animation2.RotateCoeff = 0!
-        Animation2.RotateLimit = 0!
-        Animation2.ScaleCoeff = CType(resources.GetObject("Animation2.ScaleCoeff"), System.Drawing.PointF)
-        Animation2.SlideCoeff = CType(resources.GetObject("Animation2.SlideCoeff"), System.Drawing.PointF)
-        Animation2.TimeCoeff = 0!
-        Animation2.TransparencyCoeff = 0!
-        Me.SlideTransrev.DefaultAnimation = Animation2
+        Animation4.AnimateOnlyDifferences = True
+        Animation4.BlindCoeff = CType(resources.GetObject("Animation4.BlindCoeff"), System.Drawing.PointF)
+        Animation4.LeafCoeff = 0!
+        Animation4.MaxTime = 1.0!
+        Animation4.MinTime = 0!
+        Animation4.MosaicCoeff = CType(resources.GetObject("Animation4.MosaicCoeff"), System.Drawing.PointF)
+        Animation4.MosaicShift = CType(resources.GetObject("Animation4.MosaicShift"), System.Drawing.PointF)
+        Animation4.MosaicSize = 0
+        Animation4.Padding = New System.Windows.Forms.Padding(0)
+        Animation4.RotateCoeff = 0!
+        Animation4.RotateLimit = 0!
+        Animation4.ScaleCoeff = CType(resources.GetObject("Animation4.ScaleCoeff"), System.Drawing.PointF)
+        Animation4.SlideCoeff = CType(resources.GetObject("Animation4.SlideCoeff"), System.Drawing.PointF)
+        Animation4.TimeCoeff = 0!
+        Animation4.TransparencyCoeff = 0!
+        Me.SlideTransrev.DefaultAnimation = Animation4
         '
         'Guna2DragControl1
         '
@@ -902,11 +883,46 @@ Partial Class Form2
         Me.Guna2DragControl1.TransparentWhileDrag = True
         Me.Guna2DragControl1.UseTransparentDrag = True
         '
+        'Guna2HtmlLabel2
+        '
+        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Black
+        Me.slideTransition.SetDecoration(Me.Guna2HtmlLabel2, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.Guna2HtmlLabel2, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.LoadingTransition.SetDecoration(Me.Guna2HtmlLabel2, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.SlideTransrev.SetDecoration(Me.Guna2HtmlLabel2, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Ebrima", 26.0!, System.Drawing.FontStyle.Bold)
+        Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.Gold
+        Me.Guna2HtmlLabel2.IsContextMenuEnabled = False
+        Me.Guna2HtmlLabel2.IsSelectionEnabled = False
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(21, 0)
+        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(165, 49)
+        Me.Guna2HtmlLabel2.TabIndex = 96
+        Me.Guna2HtmlLabel2.Text = "Welcome!"
+        Me.Guna2HtmlLabel2.UseGdiPlusTextRendering = True
+        '
+        'PanelsContainer
+        '
+        Me.PanelsContainer.AutoSize = True
+        Me.PanelsContainer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.PanelsContainer.BackgroundImage = CType(resources.GetObject("PanelsContainer.BackgroundImage"), System.Drawing.Image)
+        Me.PanelsContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.slideTransition.SetDecoration(Me.PanelsContainer, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.PanelsContainer, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.LoadingTransition.SetDecoration(Me.PanelsContainer, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.SlideTransrev.SetDecoration(Me.PanelsContainer, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.PanelsContainer.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelsContainer.Location = New System.Drawing.Point(0, 37)
+        Me.PanelsContainer.Margin = New System.Windows.Forms.Padding(6)
+        Me.PanelsContainer.Name = "PanelsContainer"
+        Me.PanelsContainer.Size = New System.Drawing.Size(832, 548)
+        Me.PanelsContainer.TabIndex = 104
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1073, 549)
+        Me.ClientSize = New System.Drawing.Size(1262, 587)
         Me.Controls.Add(Me.Panel1)
         Me.LoadingTransition.SetDecoration(Me, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.PanelTransition.SetDecoration(Me, Guna.UI2.AnimatorNS.DecorationType.None)
@@ -919,13 +935,15 @@ Partial Class Form2
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "Form2"
+        Me.Padding = New System.Windows.Forms.Padding(1)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Howeasyy 1.0 login"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
         Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2Panel2.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -972,7 +990,6 @@ Partial Class Form2
     Friend WithEvents Guna2GradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents GradientPanelPicture As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents Guna2GradientPanel2 As Guna.UI2.WinForms.Guna2GradientPanel
-    Friend WithEvents Label5 As Label
     Friend WithEvents Guna2GradientPanel3 As Guna.UI2.WinForms.Guna2GradientPanel
     Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
@@ -994,7 +1011,8 @@ Partial Class Form2
     Friend WithEvents slideTransition As Guna.UI2.WinForms.Guna2Transition
     Friend WithEvents SlideTransrev As Guna.UI2.WinForms.Guna2Transition
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents PanelsContainer As LoginPicture
     Friend WithEvents Guna2DragControl1 As Guna.UI2.WinForms.Guna2DragControl
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PanelsContainer As LoginPicture
+    Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class
