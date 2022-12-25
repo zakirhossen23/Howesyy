@@ -7,6 +7,13 @@ Imports System.Threading
 Imports System.Net
 Imports Guna.UI2.WinForms
 Imports Microsoft.Win32
+Imports System.Net.Http
+Imports System.Net.Http.Headers
+Imports System.Threading.Tasks
+Imports CefSharp.DevTools.Cast
+Imports Org.BouncyCastle.Asn1.Crmf
+Imports RestSharp
+Imports CefSharp
 
 Public Class Editprofile
     Dim CurrentUser = {New With {
@@ -18,6 +25,9 @@ Public Class Editprofile
         .serial = "",
         .status = ""
         }}
+
+    Dim selectedPath As String = ""
+    Dim selectedName As String = ""
     Dim connection As New MySqlConnection("datasource=184.154.69.83;port=3306;username=howeasyyweb_howeasyy;password=8WU6eieKTK0J;database=howeasyyweb_howeasyy")
 
     Private Async Sub LoadAll()
@@ -34,7 +44,8 @@ Public Class Editprofile
         NameTXT.Text = CurrentUser(0).name
         EmailTXT.Text = CurrentUser(0).email
         UserImage.Image = Bitmap.FromStream(CType(WebRequest.Create(New Uri($"https://api.howeasyy.com/{CurrentUser(0).picture}")).GetResponse().GetResponseStream(), Stream))
-
+        Guna2Panel2.UseTransparentBackground = False
+        Guna2Panel2.UseTransparentBackground = True
         Thread.CurrentThread.Abort()
     End Sub
 
@@ -49,41 +60,31 @@ Public Class Editprofile
 
     End Sub
 
-
-    Private Sub ButtonX3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Me.Close()
-    End Sub
-    Private Sub updateimage()
-        'Dim update_command As New MySqlCommand("UPDATE `login` SET `Picture`=@Picture WHERE `Auto_ID` = @id", connection)
-
-        'Dim ms As New MemoryStream
-
-        'UserImage.Image.Save(ms, UserImage.Image.RawFormat)
-        'update_command.Parameters.Add("@id", MySqlDbType.Blob).Value = TextBoxX6.Text()
-        'update_command.Parameters.Add("@Picture", MySqlDbType.Blob).Value = ms.ToArray()
-
-        'connection.Open()
-
-        'If update_command.ExecuteNonQuery() = 1 Then
-
-        'Else
-
-        'End If
-
-        connection.Close()
-    End Sub
-
-
-    Dim str As String = "server=184.154.69.83; uid=howeasyyweb_howeasyy; pwd=8WU6eieKTK0J; database=howeasyyweb_howeasyy"
-    Dim con As New MySqlConnection(str)
+    Private Async Function updateimage() As Task(Of String)
+        If (Not selectedPath.Equals("")) Then
+            Dim httpClient = New HttpClient()
+            Dim request = New HttpRequestMessage(New HttpMethod("POST"), "https://api.howeasyy.com/upload_image")
+            Dim MultipartContent = New MultipartFormDataContent()
+            MultipartContent.Add(New ByteArrayContent(File.ReadAllBytes(selectedPath)), "image_file", selectedName)
+            request.Content = MultipartContent
+            Dim response = Await httpClient.SendAsync(request)
+            Dim body = Await response.Content.ReadAsStringAsync()
+            Console.WriteLine(body)
+            selectedName = ""
+            selectedPath = ""
+            Return body
+        End If
+        Return CurrentUser(0).picture
+    End Function
 
     Private Sub Guna2Panel2_Click(sender As Object, e As EventArgs) Handles IconPictureBox1.Click, Guna2Panel2.Click
         Dim opf As New OpenFileDialog
 
-        opf.Filter = "Choose Image(*.JPG;*.PNG;*.GIF)|*.jpg;*.png;*.gif"
+        opf.Filter = "Choose Image(*.JPG;*.JPEG;*.PNG;)|*.jpg;*.jpeg;*.png;"
         opf.ShowDialog()
         If opf.FileNames.Length > 0 Then
-
+            selectedName = opf.SafeFileName
+            selectedPath = opf.FileName
             UserImage.Image = Image.FromFile(opf.FileName)
             Guna2Panel2.UseTransparentBackground = False
             Guna2Panel2.UseTransparentBackground = True
@@ -97,6 +98,9 @@ Public Class Editprofile
         ElseIf (Not NewPassTXT.Text.Equals(ConfirmPassTXT.Text)) Then
             MessageBox.Show($"New Password and Confirm Password both does not matched!", "error", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
+
+            Dim pictureurl = Await updateimage()
+
             If NewPassTXT.Text = "" Then
                 NewPassTXT.Text = Cryptography.Decrypt(CurrentUser(0).pass)
             End If
@@ -104,15 +108,17 @@ Public Class Editprofile
             NewPassTXT.Text = ""
             Dim allFields = New Dictionary(Of String, Object) From {
             {"name", NameTXT.Text},
-            {"pass", Password}
+            {"pass", Password},
+            {"picture", pictureurl}
             }
 
             Dim sqlQuery As String = Request.UpdateQueryMaker("users", allFields, "id", CurrentUser(0).id)
 
             Await Request.PostAsync(sqlQuery)
             UpadateBTN.Enabled = True
-            Mainpage.ButtonX2.PerformClick()
         End If
+        Dim mainpage As Mainpage = ParentForm
+        Await mainpage.LoadAll()
 
         UpadateBTN.Enabled = True
         Thread.CurrentThread.Abort()

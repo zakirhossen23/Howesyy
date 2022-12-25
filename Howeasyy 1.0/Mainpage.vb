@@ -32,7 +32,7 @@ Public Class Mainpage
     End Sub
 
 
-    Private Async Sub LoadAll()
+    Public Async Function LoadAll() As Tasks.Task
         Dim Result = {New With {
         .id = "",
         .name = "",
@@ -50,7 +50,7 @@ Public Class Mainpage
         Laodtransition.HideSync(FromLoader, parallel:=True)
         Laodtransition.HideSync(LoadPanel)
         Thread.CurrentThread.Abort()
-    End Sub
+    End Function
 
     Public Sub Mainpage_Load_1(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Control.CheckForIllegalCrossThreadCalls = False
