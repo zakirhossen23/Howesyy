@@ -410,6 +410,12 @@
     <Compile Include="Chromium\Popup for browser\addshortcut.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Chromium\Testing\BrowserForm.Designer.vb">
+      <DependentUpon>BrowserForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Chromium\Testing\BrowserForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Howeasyy AI\_class\CommandsCode.vb" />
     <Compile Include="_Class\Api\lib\Utils.vb" />
     <Compile Include="_Class\Api\Request.vb" />
@@ -617,6 +623,12 @@
     <Compile Include="_Digital_components\browserpage.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="_Digital_components\Browser\HeaderTabs.Designer.vb">
+      <DependentUpon>HeaderTabs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="_Digital_components\Browser\HeaderTabs.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="_Digital_components\Guna2LoadingButton.Designer.vb">
       <DependentUpon>Guna2LoadingButton.vb</DependentUpon>
     </Compile>
@@ -705,6 +717,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chromium\Popup for browser\addshortcut.resx">
       <DependentUpon>addshortcut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chromium\Testing\BrowserForm.resx">
+      <DependentUpon>BrowserForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Developer Area\codeinsert.resx">
       <DependentUpon>codeinsert.vb</DependentUpon>
@@ -795,6 +810,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_Digital_components\browserpage.resx">
       <DependentUpon>browserpage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Digital_components\Browser\HeaderTabs.resx">
+      <DependentUpon>HeaderTabs.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_Digital_components\Guna2LoadingButton.resx">
       <DependentUpon>Guna2LoadingButton.vb</DependentUpon>
