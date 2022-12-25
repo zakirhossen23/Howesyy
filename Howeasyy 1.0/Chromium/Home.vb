@@ -5,41 +5,43 @@ Imports System.Net
 Imports System.IO
 Imports System.ComponentModel
 Imports System.Threading.ApartmentState
+Imports System.Threading
+Imports System.Runtime.CompilerServices
+
 Public Class Home
 
     Public Shared opened As Boolean
-
-    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guna2Button1.Click, Button5.Click
-
+    Dim frm As New browserhome
+    Private Delegate Sub CompleteWork()
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guna2Button1.Click
         CreateNewTab("")
-        Status.AddStatus("Home - Create tab")
     End Sub
     Function createTab() As TabItem
-        Dim newtab As TabItem = TabControl1.CreateTab("New Tab")
-        Return newtab
+        Dim newtab2 As TabItem = TabControl1.CreateTab("New Tab")
+        Return newtab2
     End Function
-    Public Sub CreateNewTab(ByVal link As String)
+    Public Async Sub CreateNewTab(ByVal link As String)
         ''''''''''✅✅✅✅✅✅✅✅✅✅
-
-        Dim newtab As TabItem = createTab()
-        Dim panel As New TabControlPanel
-        panel = DirectCast(newtab.AttachedControl, TabControlPanel)
-
-        Dim frm As New browserhome
+        frm = New browserhome
         frm.TopLevel = False
-        If (link IsNot "") Then
-            frm.TextBox1.Text = link
-            frm.Guna2Panel1.Visible = False
-            frm.GoBTN.PerformClick()
-        End If
+        'If (link IsNot "") Then
+        '    frm.TextBox1.Text = link
+        '    frm.Guna2Panel1.Visible = False
+        '    frm.GoBTN.PerformClick()
+        'End If
 
         frm.BringToFront()
+
         frm.Show()
         frm.TextBox1.Focus()
         frm.Dock = DockStyle.Fill
-        panel.Controls.Add(frm)
-        TabControl1.SelectedTab = newtab
 
+        newtab = createTab()
+
+        panel = DirectCast(newtab.AttachedControl, TabControlPanel)
+        panel.Controls.Add(frm)
+
+        TabControl1.SelectedTab = newtab
         opened = True
         '''''✅✅✅✅✅✅✅
     End Sub
@@ -58,57 +60,22 @@ Public Class Home
         End If
 
     End Sub
-    Private Sub BackgroundNewTab_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundNewTab.RunWorkerCompleted
-        Dim frm As New browserhome
-        frm.TopLevel = False
-        frm.BringToFront()
-        frm.Show()
-        frm.Dock = DockStyle.Fill
-        panel.Controls.Add(frm)
-        BackgroundNewTab.CancelAsync()
-
-    End Sub
-
+    Dim panel As TabControlPanel
     Dim newtab As New TabItem
-    Dim panel As New TabControlPanel
     Private Sub BackgroundNewTab_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundNewTab.DoWork
 
         Control.CheckForIllegalCrossThreadCalls = False
-
-        If Me.InvokeRequired Then
-            Me.BeginInvoke(CType(Function()
-                                     newtab = TabControl1.CreateTab("New Tab")
-
-                                     panel = DirectCast(newtab.AttachedControl, TabControlPanel)
-                                     TabControl1.SelectedTab = newtab
-                                     Return 0
-                                 End Function, MethodInvoker))
-        Else
-            newtab = TabControl1.CreateTab("New Tab")
-            panel = DirectCast(newtab.AttachedControl, TabControlPanel)
-        End If
-
-
-        MessageBoxEx.Show("Starting")
+        CreateNewTab("")
 
 
     End Sub
 
-    <Obsolete>
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ''''''Button5.PerformClick()
         Control.CheckForIllegalCrossThreadCalls = False
-        Threading.Thread.CurrentThread.ApartmentState = Threading.ApartmentState.STA
 
         ''''Mainpage.FormCloseWorker.RunWorkerAsync()
 
     End Sub
 
-    Private Sub TabControl1_Click(sender As Object, e As EventArgs) Handles TabControl1.Click
-
-    End Sub
-
-    Private Sub LabelX2_Click(sender As Object, e As EventArgs) Handles LabelX2.Click
-
-    End Sub
 End Class

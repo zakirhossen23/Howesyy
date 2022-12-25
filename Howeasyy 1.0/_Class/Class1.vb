@@ -1,4 +1,8 @@
-﻿Public Structure Class1
+﻿Imports System.Runtime.CompilerServices
+Imports System.Threading.Tasks
+
+
+Public Structure Class1
 
     Public Shared color1 As Color = Color.Gold
 

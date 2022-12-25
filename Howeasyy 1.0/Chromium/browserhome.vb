@@ -7,6 +7,7 @@ Imports System.Text.RegularExpressions
 Public Class browserhome
     Friend Shared StartUrl As String = ""
     Friend remembershortcut As String
+    Public showed As Boolean = False
     Private Sub Guna2TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles Guna2TextBox1.KeyDown
         If e.KeyCode = Keys.Enter Then
             Try
@@ -26,27 +27,23 @@ Public Class browserhome
     End Sub
 
     Private Sub ChromiumWebBrowser1_AddressChanged(sender As Object, e As CefSharp.AddressChangedEventArgs) Handles ChromiumWebBrowser1.AddressChanged
-
         Try
-
             Invoke(New MethodInvoker(Sub()
                                          TextBox1.Text = e.Address
                                      End Sub))
 
         Catch ex As Exception
-
         End Try
-
-
     End Sub
 
     Private Sub ChromiumWebBrowser1_TitleChanged(sender As Object, e As TitleChangedEventArgs) Handles ChromiumWebBrowser1.TitleChanged
+        If (IsNothing(e)) Then
+            Exit Sub
+        End If
         Try
-
             Invoke(New MethodInvoker(Sub()
-                                         Home.TabControl1.SelectedTab.Text = e.Title
+                                         DirectCast(Me.Parent, DevComponents.DotNetBar.TabControlPanel).TabItem.Text = e.Title
                                      End Sub))
-
         Catch ex As Exception
 
         End Try
@@ -330,5 +327,9 @@ Public Class browserhome
         If (e.KeyChar = Microsoft.VisualBasic.ChrW(13)) Then
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub browserhome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        showed = True
     End Sub
 End Class

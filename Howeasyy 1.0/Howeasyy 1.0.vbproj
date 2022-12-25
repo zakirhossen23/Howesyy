@@ -611,6 +611,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="_Class\Status.vb" />
+    <Compile Include="_Digital_components\browserpage.Designer.vb">
+      <DependentUpon>browserpage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="_Digital_components\browserpage.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="_Digital_components\Guna2LoadingButton.Designer.vb">
       <DependentUpon>Guna2LoadingButton.vb</DependentUpon>
     </Compile>
@@ -786,6 +792,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Webbrowser\Normal Browser\TabNoramBrowser.resx">
       <DependentUpon>TabNoramBrowser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Digital_components\browserpage.resx">
+      <DependentUpon>browserpage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_Digital_components\Guna2LoadingButton.resx">
       <DependentUpon>Guna2LoadingButton.vb</DependentUpon>
