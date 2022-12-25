@@ -640,7 +640,7 @@ Partial Class AdminMainPage
         Me.TranUp.SetDecoration(Me.Guna2PictureBox2, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.DashboardTransition1.SetDecoration(Me.Guna2PictureBox2, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.SlideBarTran.SetDecoration(Me.Guna2PictureBox2, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.Guna2PictureBox2.Image = Global.Howeasyy.My.Resources.Resources.unnamed
+        Me.Guna2PictureBox2.Image = Global.Howeasyy.My.Resources.Resources.logo
         Me.Guna2PictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.Guna2PictureBox2.Location = New System.Drawing.Point(32, 3)
         Me.Guna2PictureBox2.Name = "Guna2PictureBox2"

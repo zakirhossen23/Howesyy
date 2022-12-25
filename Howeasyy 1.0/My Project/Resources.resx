@@ -139,9 +139,6 @@
   <data name="clipart3077324" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clipart3077324.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="man icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\man icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="update_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\update_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,14 +169,8 @@
   <data name="Web" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Web.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="img_1465791" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img_1465791.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image_2020_10_13T04_58_23_994Z_removebg_preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image_2020_10_13T04_58_23_994Z-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="toppng.com-lock-icon-lock-icon-lock-circle-icon-small-lock-lock-icon-mac-252x375" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\toppng.com-lock-icon-lock-icon-lock-circle-icon-small-lock-lock-icon-mac-252x375.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,9 +232,6 @@
   <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="unnamed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Untitled-(1) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="1408359111-5cfd2ea93b130_articlex" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1408359111-5cfd2ea93b130_articlex.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -283,13 +271,13 @@
   <data name="administrator new version" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\administrator new version.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Howeasyyload-new" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Untitled-(1) (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pos system new version" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pos system new version.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="reloadicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reloadicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

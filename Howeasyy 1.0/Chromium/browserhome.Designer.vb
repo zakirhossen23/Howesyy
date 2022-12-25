@@ -365,7 +365,7 @@ Partial Class browserhome
         Me.searchtransition.SetDecoration(Me.PictureBox1, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.Guna2Transition2.SetDecoration(Me.PictureBox1, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.Guna2Transition1.SetDecoration(Me.PictureBox1, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.PictureBox1.Image = Global.Howeasyy.My.Resources.Resources.unnamed
+        Me.PictureBox1.Image = Global.Howeasyy.My.Resources.Resources.logo
         Me.PictureBox1.Location = New System.Drawing.Point(568, 33)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(150, 143)

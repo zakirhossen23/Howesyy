@@ -1,6 +1,8 @@
 ﻿Imports FontAwesome.Sharp
 Imports System.IO
 Imports MySql.Data.MySqlClient
+Imports System.Threading
+Imports System.Net
 
 Public Class Mainpage
     Dim connection As New MySqlConnection("datasource=184.154.69.83;port=3306;username=howeasyyweb_howeasyy;password=8WU6eieKTK0J;database=howeasyyweb_howeasyy")
@@ -8,32 +10,60 @@ Public Class Mainpage
     Dim con As New MySqlConnection(str)
     Dim comm As MySqlCommand
     Dim datar As MySqlDataReader
+    Dim CurrentUser = {New With {
+        .id = "",
+        .name = "",
+        .email = "",
+        .pass = "",
+        .picture = "",
+        .serial = "",
+        .status = ""
+        }}
     Private Sub AdministratorIdentity()
-
-
         If My.Settings.UserStatus = "Admin But User" Then
 #Region "Admin but user"
-
             IconButton13.Visible = True
-
 #End Region
         Else
 #Region "User Page Show"
-
             IconButton13.Visible = False
-
-
 #End Region
         End If
     End Sub
+
+
+    Private Async Sub LoadAll()
+        Dim Result = {New With {
+        .id = "",
+        .name = "",
+        .email = "",
+        .pass = "",
+        .picture = "",
+        .serial = "",
+        .status = ""
+        }}
+        CurrentUser = Await Request.GetJSONAsync("select * from users where id='" & My.Settings.LoginID & "'", Result)
+
+        PictureBox1.Image = Bitmap.FromStream(CType(WebRequest.Create(New Uri($"https://api.howeasyy.com/{CurrentUser(0).picture}")).GetResponse().GetResponseStream(), Stream))
+        UsernameLBL.Text = CurrentUser(0).name
+
+        Laodtransition.HideSync(FromLoader, parallel:=True)
+        Laodtransition.HideSync(LoadPanel)
+        Thread.CurrentThread.Abort()
+    End Sub
+
     Public Sub Mainpage_Load_1(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Control.CheckForIllegalCrossThreadCalls = False
         AdministratorIdentity()
 
+        Dim objNewThread As New Thread(AddressOf LoadAll)
+        objNewThread.IsBackground = True
+        objNewThread.Start()
+
         LoadPanel.BringToFront()
         Laodtransition.ShowSync(LoadPanel)
         TextBox1.Text = My.Settings.LoginID
-        BackgroundWorker1.RunWorkerAsync()
+        'BackgroundWorker1.RunWorkerAsync()
 
     End Sub
 
@@ -181,7 +211,7 @@ Public Class Mainpage
 
             If table.Rows.Count > 0 Then
                 imgByte = table(0)(4)
-                Label1.Text = table(0)(2)
+                UsernameLBL.Text = table(0)(2)
                 Dim ms As New MemoryStream(imgByte)
                 PictureBox1.Image = Image.FromStream(ms)
             Else

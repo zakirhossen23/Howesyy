@@ -37,30 +37,6 @@
 
         End If
 
-        'Bookmark Self-Check and Setup
-        If ProgressBar1.Value = "99" Then
-
-
-
-            If My.Computer.FileSystem.FileExists("C:\local\Bookmarks.gwbb\") Then
-                r = New IO.StreamReader("C:\local\Bookmarks.gwbb\")
-                While (r.Peek() > -1)
-                    'Bookmarks.ListBox1.Items.Add(r.ReadLine)
-                End While
-                r.Close()
-            Else
-
-            End If
-            If My.Computer.FileSystem.FileExists("C:\local\Bookmarks2.gwbb\") Then
-                r = New IO.StreamReader("C:\local\Bookmarks2.gwbb\")
-                While (r.Peek() > -1)
-                    'Bookmarks.ListBox2.Items.Add(r.ReadLine)
-                End While
-                r.Close()
-            Else
-
-            End If
-        End If
 
         If ProgressBar1.Value = "100" Then
             Prog_In_Timer.Stop()

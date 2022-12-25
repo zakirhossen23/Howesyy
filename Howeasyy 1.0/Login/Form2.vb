@@ -1,122 +1,91 @@
-﻿Imports MySql.Data.MySqlClient
+﻿#Disable Warning BC42016 ' Implicit conversion
+Imports MySql.Data.MySqlClient
 Imports System.IO
 Imports System.Data
+Imports Newtonsoft.Json
 Imports System.ComponentModel
+Imports System.Threading
+Imports Mysqlx.XDevAPI.Common
+Imports CefSharp.Web
+Imports Chilkat
 
 Public Class Form2
-    Private connection As New MySqlConnection("datasource=184.154.69.83;port=3306;username=howeasyyweb_howeasyy;password=8WU6eieKTK0J;database=howeasyyweb_howeasyy")
-    Dim obj As MySqlDataAdapter
-    Dim dta As New DataTable
-    Dim complete As New Label
-    Public reader As MySqlDataReader
-    Public Comman As MySqlCommand
     Public query As String
+    Public SerializerSettings As JsonSerializerSettings = New JsonSerializerSettings()
 
-#Region "MySQL"
-    Private Sub login()
-        Try
-            connection.Close()
-        Catch ex As Exception
+    Private Async Sub Check()
 
-        End Try
+        Dim result() = {New With {
+        .id = "",
+        .name = "",
+        .email = "",
+        .pass = "",
+        .picture = "",
+        .serial = "",
+        .status = ""
+        }}
+        result = Await Request.GetJSONAsync("select * from users where email='" & TextBox1.Text & "'", result)
 
-
-        Try
-
-            Dim Password As String = ""
-            Dim IsExist As Boolean = False
-            connection.Open()
-            Dim cmd As MySqlCommand = New MySqlCommand("select * from login where id='" & TextBox1.Text & "'", connection)
-            Dim sdr As MySqlDataReader = cmd.ExecuteReader()
-
-            If sdr.Read() Then
-                Password = sdr.GetString(1)
-                IsExist = True
-            End If
-
-            connection.Close()
-
-            If IsExist Then
-
-                If Cryptography.Decrypt(Password).Equals(TextBox2.Text) Then
-
-                    ''''''
-                    complete.Text = "done"
-
-                    ''''''
-                    Loading.Prog_In_Timer.Start()
-                Else
-                    MessageBox.Show("Password is wrong!...", "error", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    complete.Text = "failed"
-                End If
-            Else
-                complete.Text = "failed"
-                MessageBox.Show("Please enter the valid credentials", "error", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End If
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-
-
-        connection.Close()
-
-
-    End Sub
-    Dim str As String = "server=184.154.69.83; uid=howeasyyweb_howeasyy; pwd=8WU6eieKTK0J; database=howeasyyweb_howeasyy"
-    Dim con As New MySqlConnection(str)
-    Private Sub getusername()
-
-        Dim command As New MySqlCommand("SELECT  `id`,`pass`,`Name`,`Auto_ID` FROM `login` WHERE `id` = @iD", connection)
-        command.Parameters.Add("@iD", MySqlDbType.Text).Value = TextBox1.Text
-
-        Dim adapter As New MySqlDataAdapter(command)
-        Dim table As New DataTable()
-
-
-        Try
-
-            adapter.Fill(table)
-
-
-            If table.Rows.Count > 0 Then
-                'TextBox3.Text = table(0)(2)
-                TextBox4.Text = table(0)(3)
-
-            Else
-
-            End If
-
-        Catch ex As Exception
-        End Try
-    End Sub
-#End Region
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Button1.Enabled = False
-
+        If (result.Length > 0) Then
+            If Cryptography.Decrypt(result(0).pass).Equals(TextBox2.Text) Then
+                My.Settings.LoginID = result(0).id
 #Region "Settings Remember checkbox"
-        If CheckBox1.Checked = True Then
-            My.Settings.Email = TextBox1.Text
-            My.Settings.Password = TextBox2.Text
-            My.Settings.Remember = True
-            My.Settings.Save()
-        Else
-
-            My.Settings.Remember = False
-        End If
-        My.Settings.Reload()
+                If CheckBox1.Checked = True Then
+                    My.Settings.Email = TextBox1.Text
+                    My.Settings.Password = TextBox2.Text
+                    My.Settings.Remember = True
+                Else
+                    My.Settings.Remember = False
+                End If
+                My.Settings.Save()
+                My.Settings.Reload()
 #End Region
 
 #Region "User Status Checking"
-        If TextBox1.Text = "zakirhoss12345@gmail.com" Or TextBox1.Text = "sales@howeasyy.com" Then
-            My.Settings.UserStatus = "Admin"
-            My.Settings.Save()
-        Else
-            My.Settings.UserStatus = "User"
-            My.Settings.Save()
-        End If
-        My.Settings.Reload()
+                If TextBox1.Text = "zakirhoss12345@gmail.com" Or TextBox1.Text = "sales@howeasyy.com" Then
+                    My.Settings.UserStatus = "Admin"
+                    My.Settings.Save()
+                Else
+                    My.Settings.UserStatus = "User"
+                    My.Settings.Save()
+                End If
+                My.Settings.Reload()
 #End Region
+
+                If CheckBox1.Checked = False Then
+                    loadclear()
+                End If
+
+                Loading.Prog_In_Timer.Start()
+                Me.Hide()
+                Loading.ShowDialog()
+
+                Button1.Enabled = True
+                ButtonX1.PerformClick()
+                Thread.CurrentThread.Abort()
+
+            Else
+                MessageBox.Show("Password is wrong!...", "error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
+        Else
+            MessageBox.Show("Please enter the valid credentials", "error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+
+
+        Button1.Enabled = True
+
+
+        Thread.CurrentThread.Abort()
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Button1.Enabled = False
+
+        Dim objNewThread As New Thread(AddressOf Check)
+        objNewThread.IsBackground = True
+        objNewThread.Start()
+
 
 #Region "Started Working"
         With LoadPanel
@@ -126,16 +95,13 @@ Public Class Form2
             .BringToFront()
         End With
         LoadingTransition.ShowSync(LoadPanel)
-
-        Threading.Thread.Sleep(1000)
-        BackgroundWorker1.RunWorkerAsync()
 #End Region
-
 
     End Sub
 
+
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        slideTransition.HideSync(Panel3)
+        slideTransition.HideSync(Panel3, parallel:=True)
         Panel5.Visible = False
         DisplayFormwithoutclear(New signup, Panel3)
         SlideTransrev.ShowSync(Panel3)
@@ -143,8 +109,6 @@ Public Class Form2
     End Sub
     Public Sub openslide()
         Me.slideTransition.ShowSync(Panel5)
-
-
     End Sub
     Private Sub Form2_Closing(sender As Object, e As EventArgs) Handles MyBase.FormClosing
         Application.Exit()
@@ -155,17 +119,16 @@ Public Class Form2
         Panel5.Visible = False
         DisplayFormwithoutclear(forgotpassconnect, Panel3)
         SlideTransrev.ShowSync(Panel3)
-
-
     End Sub
 
     Private Sub loadclear()
         TextBox1.Clear()
         TextBox2.Clear()
-
     End Sub
 #Region "Form Loading"
     Private Sub Form2_FromLoad(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        SerializerSettings.Formatting = Formatting.None
+        Control.CheckForIllegalCrossThreadCalls = False
 #Region "Full Check"
 
         If My.Settings.LoginID = "" Then
@@ -212,12 +175,11 @@ Public Class Form2
     Public Sub LoginpageReloading()
 
         If My.Settings.Remember = True Then
-                TextBox1.Text = My.Settings.Email
-                TextBox2.Text = My.Settings.Password
-                CheckBox1.Checked = True
-            End If
-
-            Button1.Enabled = True
+            TextBox1.Text = My.Settings.Email
+            TextBox2.Text = My.Settings.Password
+            CheckBox1.Checked = True
+        End If
+        Button1.Enabled = True
 
     End Sub
 
@@ -255,66 +217,6 @@ Public Class Form2
         InternetCheck.RunWorkerAsync()
     End Sub
 
-    Private Sub loginclick()
-
-        getusername()
-
-        If TextBox1.Text = "sales@howeasyy.com" Then
-            Mainpage.IconButton13.Visible = True
-            Mainpage.IconButton15.Visible = True
-
-            login()
-            Mainpage.BrowserBTN.PerformClick()
-
-        ElseIf TextBox1.Text = "zakirhoss12345@gmail.com" Then
-
-            Mainpage.IconButton13.Visible = True
-            Mainpage.IconButton15.Visible = True
-
-            login()
-
-
-        Else
-            Mainpage.IconButton13.Visible = False
-            Mainpage.IconButton15.Visible = False
-
-            login()
-            Mainpage.BrowserBTN.PerformClick()
-        End If
-        If complete.Text = "done" Then
-
-            If CheckBox1.Checked = True Then
-            Else
-                loadclear()
-            End If
-
-            Loading.Prog_In_Timer.Start()
-            Me.Hide()
-            Loading.ShowDialog()
-
-            Button1.Enabled = True
-            ButtonX1.PerformClick()
-            Try
-                BackgroundWorker1.CancelAsync()
-            Catch ex As Exception
-
-            End Try
-
-
-        Else
-
-            ButtonX1.PerformClick()
-            Try
-                BackgroundWorker1.CancelAsync()
-            Catch ex As Exception
-
-            End Try
-
-            Button1.Enabled = True
-        End If
-
-    End Sub
-
     Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
         If TextBox2.UseSystemPasswordChar = True Then
             TextBox2.UseSystemPasswordChar = False
@@ -337,31 +239,19 @@ Public Class Form2
         Timer1.Stop()
     End Sub
 
-    Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Panel4.Paint
-
-    End Sub
-
-    Private Sub Guna2PictureBox3_Click(sender As Object, e As EventArgs) Handles Guna2PictureBox3.Click
-
-    End Sub
-
     Private Sub ButtonX1_Click(sender As Object, e As EventArgs) Handles ButtonX1.Click
         LoadingTransition.HideSync(LoadPanel)
         Button1.Enabled = True
     End Sub
 
-    Private Sub BackgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker1.DoWork
-        Control.CheckForIllegalCrossThreadCalls = False
-        loginclick()
-    End Sub
-
-    Private Sub BackgroundWorker1_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
-
-    End Sub
 
     Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles TextBox4.TextChanged
         My.Settings.LoginID = TextBox4.Text
         My.Settings.Save()
         'MsgBox(My.Settings.LoginID)
+    End Sub
+
+    Private Sub Guna2ControlBox1_Click(sender As Object, e As EventArgs) Handles Guna2ControlBox1.Click
+        Application.Exit()
     End Sub
 End Class

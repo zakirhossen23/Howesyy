@@ -64,7 +64,7 @@ Public Class Freeinterface
 
         command.Parameters.Add("@Email", MySqlDbType.VarChar).Value = FlowMobileFreeinterface.Email_ID.Text
 
-        command.Parameters.Add("@Name", MySqlDbType.VarChar).Value = Mainpage.Label1.Text
+        command.Parameters.Add("@Name", MySqlDbType.VarChar).Value = Mainpage.UsernameLBL.Text
 
         command.Parameters.Add("@Picture", MySqlDbType.Blob).Value = ms.ToArray()
 
